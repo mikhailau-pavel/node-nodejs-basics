@@ -1,5 +1,7 @@
-const remove = async () => {
-    // Write your code here 
-};
+const fs = require('node:fs/promises')
+const path = require('node:path')
 
-await remove();
+const remove = async () => {
+}
+
+remove()
