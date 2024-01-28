@@ -1,5 +1,23 @@
-const calculateHash = async () => {
-    // Write your code here 
-};
+const path = require('node:path')
+const crypto = require('node:crypto')
+const fs = require('node:fs')
+const { stdout } = require('node:process')
 
-await calculateHash();
+const read = async () => {
+
+const read = fs.createReadStream(path.join(__dirname, 'files/fileToCalculateHashFor.txt'))
+  read.on('data', (chunk) => {
+    const hexed = crypto.createHash('sha256').update(chunk).digest('hex')
+    stdout.write(hexed)
+  }
+)
+}
+
+read()
+
+/*const calculatedObject = path.join(__dirname, 'files/fileToCalculateHashFor.txt')
+
+const calculateHash = async () => {
+  console.log (crypto.createHash('sha256').update(calculatedObject)).digest('hex')
+};
+calculateHash();*/
