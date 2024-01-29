@@ -14,10 +14,3 @@ const read = fs.createReadStream(path.join(__dirname, 'files/fileToCalculateHash
 }
 
 read()
-
-/*const calculatedObject = path.join(__dirname, 'files/fileToCalculateHashFor.txt')
-
-const calculateHash = async () => {
-  console.log (crypto.createHash('sha256').update(calculatedObject)).digest('hex')
-};
-calculateHash();*/

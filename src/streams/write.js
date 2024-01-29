@@ -1,5 +1,10 @@
-const write = async () => {
-    // Write your code here 
-};
+const fs = require('node:fs');
+const { stdin } = require('node:process');
+const path = require('node:path');
 
-await write();
+
+const write = async () => {
+  const writeStream = fs.createWriteStream(path.join(__dirname, 'files/fileToWrite.txt'))
+  stdin.pipe(writeStream);
+};
+write();
